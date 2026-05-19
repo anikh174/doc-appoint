@@ -7,7 +7,7 @@ import { FaUserDoctor } from "react-icons/fa6";
 
 const Banner = () => {
   return (
-    <div>
+    <div className="mt-16">
       <div
         className="h-[550px] md:h-[400px] lg:h-[600px] md:h-[400px] bg-cover bg-center bg-no-repeat"
         style={{

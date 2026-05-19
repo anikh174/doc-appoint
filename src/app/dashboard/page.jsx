@@ -2,7 +2,7 @@ import React from 'react';
 
 const DashboardPage = () => {
     return (
-        <div>
+        <div className='mt-16'>
             Dashboard Page
         </div>
     );

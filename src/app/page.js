@@ -1,6 +1,7 @@
 import Banner from "@/components/Banner";
 import BrowseSpecialists from "@/components/BrowseSpecialists";
 import ServiceInfo from "@/components/ServiceInfo";
+import ServiceInfo2 from "@/components/ServiceInfo2";
 import TopSpecialists from "@/components/TopSpecialists";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <TopSpecialists></TopSpecialists>
       <BrowseSpecialists></BrowseSpecialists>
       <ServiceInfo></ServiceInfo>
+      <ServiceInfo2></ServiceInfo2>
     </div>
   );
 }

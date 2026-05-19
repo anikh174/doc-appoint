@@ -4,7 +4,7 @@ import NavLink from "./Navlink";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="z-50 fixed w-full top-0 left-0 shadow-md shadow-[#0a9396]">
       <div className="navbar bg-base-100 shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
@@ -27,7 +27,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-2 text-lg"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-2 text-md"
             >
               <NavLink href={"/"}>Home</NavLink>
               <NavLink href={"/all-appointment"}>All Appointment</NavLink>
@@ -40,7 +40,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className=" flex items-center gap-5 text-md font-bold menu menu-horizontal px-1">
+          <ul className=" flex items-center gap-5 text-lg font-bold menu menu-horizontal px-1">
             <NavLink href={"/"}>Home</NavLink>
             <NavLink href={"/all-appointment"}>All Appointment</NavLink>
             <NavLink href={"/dashboard"}>Dashboard</NavLink>

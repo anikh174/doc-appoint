@@ -6,7 +6,7 @@ const AllAppointmentPage = async () => {
   const doctors = await res.json();
   console.log(doctors);
   return (
-    <div>
+    <div className="mt-16">
       <div>
         <div className="bg-linear-to-l from-[#0a9396] to-[#005f73] py-10 px-5 md:p-14 lg:p-20 text-center space-y-3 md:space-y-5">
           <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold">
