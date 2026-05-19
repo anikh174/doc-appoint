@@ -31,15 +31,15 @@ const Banner = () => {
             </div>
 
             <div className="flex justify-center items-center md:justify-start gap-3 lg:gap-10">
-              <div>
+              <div className=" bg-linear-to-t from-black/00 to-black/50 p-2 rounded-lg">
                 <h4 className="text-[#48cae4] font-bold lg:text-xl flex justify-center gap-1"> <FaUserDoctor></FaUserDoctor> 500+</h4>
                 <p className="text-sm lg:text-lg text-white font-semi-bold">Verified Doctors</p>
               </div>
-              <div>
+              <div className=" bg-linear-to-t from-black/00 to-black/50 p-2 rounded-lg">
                 <h4 className="text-[#48cae4] font-bold flex lg:text-xl justify-center gap-1">4.9 <FaStar></FaStar></h4>
                 <p className="text-sm lg:text-lg text-white font-semi-bold">Average Rating</p>
               </div>
-              <div>
+              <div className=" bg-linear-to-t from-black/00 to-black/50 p-2 rounded-lg md:w-30 lg:w-40 text-center">
                 <h4 className="text-[#48cae4] font-bold flex lg:text-xl justify-center gap-1"><FaClock></FaClock> 24/7</h4>
                 <p className="text-sm lg:text-lg text-white font-semi-bold">Support</p>
               </div>
