@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner";
+import BrowseSpecialists from "@/components/BrowseSpecialists";
 import TopSpecialists from "@/components/TopSpecialists";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <div>
       <Banner></Banner>
       <TopSpecialists></TopSpecialists>
+      <BrowseSpecialists></BrowseSpecialists>
     </div>
   );
 }
