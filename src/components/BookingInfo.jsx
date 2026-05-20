@@ -1,4 +1,7 @@
 import { Button } from "@heroui/react";
+import { BiEdit } from "react-icons/bi";
+import { DeleteAlert } from "./DeleteAlert";
+import Link from "next/link";
 
 const BookingInfo = ({ bookings }) => {
   return (
@@ -9,7 +12,7 @@ const BookingInfo = ({ bookings }) => {
           <p>Manage your upcoming and past appointments</p>
         </div>
         <div>
-          <Button className={'bg-[#0a9396] text-white font-bold rounded-lg'}>+ New Appointment</Button>
+          <Link href={'/all-appointment'}><Button className={'bg-[#0a9396] text-white font-bold rounded-lg'}>+ New Appointment</Button></Link>
         </div>
       </div>
 
@@ -19,12 +22,12 @@ const BookingInfo = ({ bookings }) => {
           <p>Total Booking</p>
         </div>
         <div className="text-center border border-[#0a9396] p-5 shadow-2xl rounded-lg">
-          <span>{bookings.length}</span>
-          <p>Total Booking</p>
+          <span>0</span>
+          <p>Upcoming</p>
         </div>
         <div className="text-center border border-[#0a9396] p-5 shadow-2xl rounded-lg">
-          <span>{bookings.length}</span>
-          <p>Total Booking</p>
+          <span>0</span>
+          <p>Complete</p>
         </div>
       </div>
       <div className="space-y-10">
@@ -48,9 +51,9 @@ const BookingInfo = ({ bookings }) => {
               </div>
             </div>
 
-            <div>
-              <Button>Edit</Button>
-              <Button>Delete</Button>
+            <div className="mt-5 gap-10 flex ">
+              <Button variant="outline" className={'border border-[#0a9396] text-[#0a9396] rounded-lg'}><BiEdit></BiEdit>Edit</Button>
+              <DeleteAlert booking={booking}></DeleteAlert>
             </div>
           </div>
         ))}
