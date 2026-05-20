@@ -6,7 +6,7 @@ import { MdOutlineArrowRightAlt } from "react-icons/md";
 import Link from "next/link";
 
 const TopSpecialists = async () => {
-  const res = await fetch("http://localhost:5000/topSpecialists");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_URL}/doctors`);
   const doctors = await res.json();
   console.log(doctors);
   return (

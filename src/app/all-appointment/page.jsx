@@ -2,9 +2,8 @@ import AppointmentsCard from "@/components/AppointmentsCard";
 import React from "react";
 
 const AllAppointmentPage = async () => {
-  const res = await fetch("http://localhost:5000/doctors");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_URL}/doctors`);
   const doctors = await res.json();
-  console.log(doctors);
   return (
     <div className="mt-16">
       <div>

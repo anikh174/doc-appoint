@@ -1,10 +1,11 @@
 import { Button } from "@heroui/react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const AppointmentsCard = ({ doctor }) => {
   const {
-    education,
+    _id,
     totalReviews,
     rating,
     fee,
@@ -42,7 +43,7 @@ const AppointmentsCard = ({ doctor }) => {
           </div>
         </div>
         <div className="p-2">
-          <Button className={'w-full rounded-none bg-[#0a9396]/80 text-xl font-bold'}>View Details</Button>
+          <Link href={`all-appointment/${_id}`}><Button className={'w-full rounded-none bg-[#0a9396]/80 text-xl font-bold'}>View Details</Button></Link>
         </div>
       </div>
     </div>
