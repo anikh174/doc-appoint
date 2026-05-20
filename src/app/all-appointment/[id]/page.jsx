@@ -1,6 +1,5 @@
-import { Button } from "@heroui/react";
+import BookModal from "@/components/book-modal/BookModal";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import { CiHospital1 } from "react-icons/ci";
 import { FaRegClock, FaStar } from "react-icons/fa";
@@ -84,8 +83,8 @@ const DoctorDetailsPage = async ({ params }) => {
                     }
                 </div>
             </div>
-                    
-            <Link href={'book-appointment'}><Button>Book Appointment</Button></Link>
+
+            <BookModal specificDoctorDetails={specificDoctorDetails}></BookModal>
         </div>
       </div>
     </div>
