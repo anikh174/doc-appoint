@@ -1,7 +1,9 @@
+'use client'
 import { Button } from "@heroui/react";
 import { BiEdit } from "react-icons/bi";
 import { DeleteAlert } from "./DeleteAlert";
 import Link from "next/link";
+import EditModal from "./edit-modal/EditModal";
 
 const BookingInfo = ({ bookings }) => {
   return (
@@ -52,7 +54,7 @@ const BookingInfo = ({ bookings }) => {
             </div>
 
             <div className="mt-5 gap-10 flex ">
-              <Button variant="outline" className={'border border-[#0a9396] text-[#0a9396] rounded-lg'}><BiEdit></BiEdit>Edit</Button>
+              <EditModal booking={booking}></EditModal>
               <DeleteAlert booking={booking}></DeleteAlert>
             </div>
           </div>
