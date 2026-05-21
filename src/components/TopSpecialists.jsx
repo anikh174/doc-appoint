@@ -6,11 +6,11 @@ import { MdOutlineArrowRightAlt } from "react-icons/md";
 import Link from "next/link";
 
 const TopSpecialists = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_URL}/doctors`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_URL}/topSpecialists`);
   const doctors = await res.json();
   console.log(doctors);
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto px-5 lg:px-0">
       <div className=" my-10 flex items-center md:justify-between flex-wrap gap-5">
         <div className="space-y-3">
           <p className="text-[#0a9396] font-bold text-lg md:text-xl">
