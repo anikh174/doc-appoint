@@ -18,16 +18,16 @@ const BookingInfo = ({ bookings }) => {
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center gap-5 my-5">
-        <div className="text-center border border-[#0a9396] p-5 shadow-2xl rounded-lg">
+      <div className="flex flex-col md:flex-row items-center gap-5 my-5">
+        <div className="text-center border border-[#0a9396] p-5 shadow-2xl rounded-lg w-[100%] md:w-40">
           <span>0</span>
           <p>Complete</p>
         </div>
-        <div className="text-center border border-[#0a9396] p-5 shadow-2xl rounded-lg">
+        <div className="text-center border border-[#0a9396] p-5 shadow-2xl rounded-lg w-[100%] md:w-40">
           <span>0</span>
           <p>Upcoming</p>
         </div>
-        <div className="text-center border border-[#0a9396] p-5 shadow-2xl rounded-lg w-[100%] md:w-30">
+        <div className="text-center border border-[#0a9396] p-5 shadow-2xl rounded-lg w-[100%] md:w-40">
           <span>{bookings.length}</span>
           <p>Total Booking</p>
         </div>
