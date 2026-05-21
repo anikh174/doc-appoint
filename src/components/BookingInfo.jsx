@@ -8,13 +8,13 @@ import EditModal from "./edit-modal/EditModal";
 const BookingInfo = ({ bookings }) => {
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="flex flex-col gap-10 md:flex-row justify-between items-center">
+      <div className="flex flex-col gap-5 md:flex-row justify-between items-center">
         <div>
           <h2 className="text-2xl font-bold">My Booking</h2>
           <p>Manage your upcoming and past appointments</p>
         </div>
         <div>
-          <Link href={'/all-appointment'}><Button className={'bg-[#0a9396] text-white font-bold rounded-lg'}>+ New Appointment</Button></Link>
+          <Link href={'/all-appointment'}><Button className={'bg-[#0a9396] text-white font-bold rounded-lg w-[100%]'}>+ New Appointment</Button></Link>
         </div>
       </div>
 
@@ -27,7 +27,7 @@ const BookingInfo = ({ bookings }) => {
           <span>0</span>
           <p>Upcoming</p>
         </div>
-        <div className="text-center border border-[#0a9396] p-5 shadow-2xl rounded-lg">
+        <div className="text-center border border-[#0a9396] p-5 shadow-2xl rounded-lg w-[100%]">
           <span>0</span>
           <p>Complete</p>
         </div>
