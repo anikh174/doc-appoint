@@ -28,7 +28,7 @@ const UpdateProfile = () => {
         <BiEdit></BiEdit>Update your information
       </button>
       <dialog id="my_modal_1" className="modal">
-        <div className="modal-box p-4 rounded-xl bg-white border-[#0a9396] border-b-4 border-t-4 shadow-sm shadow-[#0a9396]">
+        <div className="modal-box p-4 rounded-xl bg-black border-[#0a9396] border-b-4 border-t-4 shadow-sm shadow-[#0a9396]">
           <div>
             <h2 className="font-bold text-3xl text-center text-[#0a9396]">Update your information</h2>
 
@@ -67,7 +67,7 @@ const UpdateProfile = () => {
           <div className="modal-action">
             <form method="dialog">
               {/* if there is a button in form, it will close the modal */}
-              <button className="text-[#0a9396] border-2 border-[#0a9396] px-3 text-center py-1 lg:px-4 lg:py-2 rounded-full font-semibold lg:font-bold text-sm lg:text-md cursor-pointer hover:bg-[#0a9396] hover:text-white hover:border-2 hover:border-white hover:shadow-sm hover:shadow-white">Close</button>
+              <button className="text-[#0a9396] border-2 border-[#0a9396] px-3 text-center py-1 lg:px-4 lg:py-2 rounded-full font-semibold lg:font-bold text-sm lg:text-md cursor-pointer hover:bg-[#0a9396] hover:text-[#0a9396] hover:border-2 hover:border-white hover:shadow-sm hover:shadow-white">Close</button>
             </form>
           </div>
         </div>

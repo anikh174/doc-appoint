@@ -2,7 +2,8 @@
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import { BiEdit } from "react-icons/bi";
-import UpdateProfile from "./updateProfile/Updateprofile";
+import UpdateProfile from "./update-profile/UpdateProfile";
+
 
 const ProfileInfo = () => {
   const { data: session } = authClient.useSession();
@@ -52,7 +53,7 @@ const ProfileInfo = () => {
 
           {/* change this line */}
             <div className="flex justify-center mt-5">
-          <UpdateProfile></UpdateProfile>
+              <UpdateProfile></UpdateProfile>
         </div>
           </div>
         </figure>
