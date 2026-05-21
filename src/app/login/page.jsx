@@ -26,8 +26,8 @@ const LoginPage = () => {
     const user = Object.fromEntries(formData.entries());
 
     const { data, error } = await authClient.signIn.email({
-      email: user.email,
-      password: user.password,
+      email: user?.email,
+      password: user?.password,
     });
     if (data) {
       toast.success("Login Successful");

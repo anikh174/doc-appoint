@@ -9,7 +9,7 @@ export function DeleteAlert({booking}) {
   const {docName, _id} =booking;
 
   const handleDelete = async()=>{
-    const res = await fetch(`http://localhost:5000/booking/${_id}`,{
+    const res = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_URL}/booking/${_id}`,{
       method: "DELETE",
       headers: {
         "content-type" : "application/json"

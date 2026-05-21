@@ -22,7 +22,7 @@ const BookModal = ({ specificDoctorDetails }) => {
     const Booking = Object.fromEntries(formData.entries());
     console.log(Booking);
 
-    const res = await fetch("http://localhost:5000/booking", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_URL}/booking`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

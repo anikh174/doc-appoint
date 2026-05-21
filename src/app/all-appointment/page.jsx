@@ -1,5 +1,6 @@
 import AppointmentsCard from "@/components/AppointmentsCard";
 import React from "react";
+import { SearchField, Label, Description, FieldError } from "@heroui/react";
 
 const AllAppointmentPage = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_URL}/doctors`);
@@ -15,12 +16,26 @@ const AllAppointmentPage = async () => {
             Browse and book from our verified specialist doctors
           </p>
         </div>
-
+        <div>
+          <SearchField className={'w-[600px] mx-auto mt-5'}>
+            <Label />
+            <SearchField.Group>
+              <SearchField.SearchIcon />
+              <SearchField.Input />
+              <SearchField.ClearButton />
+            </SearchField.Group>
+            <Description />
+            <FieldError />
+          </SearchField>
+        </div>
         <div className="my-10 space-y-3 max-w-7xl mx-auto">
           <p>{doctors.length} doctors found</p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {doctors.map((doctor) => (
-              <AppointmentsCard  key={doctor._id} doctor={doctor}></AppointmentsCard>
+              <AppointmentsCard
+                key={doctor._id}
+                doctor={doctor}
+              ></AppointmentsCard>
             ))}
           </div>
         </div>

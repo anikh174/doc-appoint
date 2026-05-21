@@ -26,10 +26,10 @@ const SignUpPage = () => {
     const user = Object.fromEntries(formData.entries());
 
     const { data, error } = await authClient.signUp.email({
-      name: user.name,
-      image: user.image,
-      email: user.email,
-      password: user.password,
+      name: user?.name,
+      image: user?.image,
+      email: user?.email,
+      password: user?.password,
     });
     if (data) {
       toast.success("Register successful");

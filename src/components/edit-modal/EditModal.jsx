@@ -24,7 +24,7 @@ const EditModal = ({booking}) => {
     const Booking = Object.fromEntries(formData.entries());
     console.log(Booking);
 
-    const res = await fetch(`http://localhost:5000/booking/${booking._id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_URL}/booking/${booking._id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
