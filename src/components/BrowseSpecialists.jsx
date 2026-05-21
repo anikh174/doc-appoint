@@ -3,7 +3,7 @@ import React from 'react';
 
 const BrowseSpecialists = () => {
     return (
-        <div  className="max-w-7xl mx-auto my-10">
+        <div  className="max-w-7xl mx-auto my-10 px-5 lg:px-0">
             <div className='space-y-3 text-center'>
                 <p className='text-2xl text-[#0a9396]'>Browse by</p>
                 <h3 className='text-4xl text-[#005f73]'>Medical Specialties</h3>
