@@ -14,6 +14,7 @@ import {
   TimeField,
 } from "@heroui/react";
 import { toast } from "react-toastify";
+import { authClient } from "@/lib/auth-client";
 
 const BookModal = ({ specificDoctorDetails }) => {
   const onSubmit = async (e) => {
@@ -22,10 +23,14 @@ const BookModal = ({ specificDoctorDetails }) => {
     const Booking = Object.fromEntries(formData.entries());
     console.log(Booking);
 
+    // added token
+    const {data:TokenData} = await authClient.token()
+
     const res = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_URL}/booking`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
+        authorization: `Bearer ${TokenData?.token}`
       },
       body: JSON.stringify(Booking),
     });
