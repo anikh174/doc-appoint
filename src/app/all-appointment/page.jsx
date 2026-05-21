@@ -2,6 +2,11 @@ import AppointmentsCard from "@/components/AppointmentsCard";
 import React from "react";
 import { SearchField, Label, Description, FieldError } from "@heroui/react";
 
+// add meta data
+export const metadata = {
+  title: "Appointments - Doc-Appoint",
+};
+
 const AllAppointmentPage = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_URL}/doctors`);
   const doctors = await res.json();

@@ -18,6 +18,11 @@ import { redirect } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 
+// add meta data
+export const metadata = {
+  title: "Login - Doc-Appoint",
+};
+
 const LoginPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();

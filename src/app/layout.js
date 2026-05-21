@@ -8,6 +8,11 @@ const josefin = Josefin_Sans({
   subsets: ["latin"],
 });
 
+export const metadata = {
+  title: "Doc-Appoint - Online Appointment Booking Platform",
+  description: "Online Appointment Booking Platform",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html
