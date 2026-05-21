@@ -15,10 +15,13 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 
 const LoginPage = () => {
+  const [isShowPassword, setIsShowPassword] = useState(false);
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -75,11 +78,22 @@ const LoginPage = () => {
             <FieldError />
           </TextField>
 
-          <TextField isRequired minLength={8} name="password" type="password">
+          <TextField
+            isRequired
+            minLength={8}
+            name="password"
+            type={isShowPassword ? "text" : "password"}
+          >
             <Label>Password</Label>
             <Input placeholder="Enter your password" />
             <FieldError />
           </TextField>
+          <span
+            className="absolute right-12 top-74 text-lg"
+            onClick={() => setIsShowPassword(!isShowPassword)}
+          >
+            {isShowPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
+          </span>
 
           <Button
             className={

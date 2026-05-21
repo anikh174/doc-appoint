@@ -15,10 +15,14 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-toastify";
 
 const SignUpPage = () => {
+  const [isShowPassword, setIsShowPassword] = useState(false);
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -95,7 +99,7 @@ const handleSignup =async()=>{
             isRequired
             minLength={8}
             name="password"
-            type="password"
+            type={isShowPassword ? "text" : "password"}
             validate={(value) => {
               if (value.length < 8) {
                 return "Password must be at least 8 characters";
@@ -116,6 +120,13 @@ const handleSignup =async()=>{
             </Description>
             <FieldError />
           </TextField>
+
+           <span
+              className="absolute right-12 top-114 text-lg"
+              onClick={() => setIsShowPassword(!isShowPassword)}
+            >
+              {isShowPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>}
+            </span>
 
           <Button
             className={
