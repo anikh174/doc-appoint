@@ -6,7 +6,7 @@ const AllAppointmentPage = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_CLIENT_URL}/doctors`);
   const doctors = await res.json();
   return (
-    <div className="mt-16">
+    <div className="mt-16 px-5 lg:px-0">
       <div>
         <div className="bg-linear-to-l from-[#0a9396] to-[#005f73] py-10 px-5 md:p-14 lg:p-20 text-center space-y-3 md:space-y-5">
           <h2 className="text-3xl md:text-4xl lg:text-5xl text-white font-bold">
@@ -17,7 +17,7 @@ const AllAppointmentPage = async () => {
           </p>
         </div>
         <div>
-          <SearchField className={'w-[600px] mx-auto mt-5'}>
+          <SearchField className={'lg:w-[600px] w-[100%] mx-auto mt-5'}>
             <Label />
             <SearchField.Group>
               <SearchField.SearchIcon />

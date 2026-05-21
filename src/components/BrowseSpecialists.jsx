@@ -38,7 +38,7 @@ const BrowseSpecialists = () => {
                 <div className='space-y-3 p-5 border-3 border-[#0a9396] rounded-xl'>
                     <Image src={'https://thumbs.dreamstime.com/b/lungs-anatomy-logo-clinic-respiratory-system-transplantation-center-pulmonology-clinic-tuberculosis-pneumonia-asthma-205122802.jpg'} alt='Pulmonology' height={50} width={50} className='mx-auto'></Image>
 
-                    <p className='text-center text-xs md:text-xl font-bold'>Pulmonology</p>
+                    <p className='text-center text-xs md:text-xl font-bold'>Pulmonolo...</p>
                 </div>
             </div>
         </div>
