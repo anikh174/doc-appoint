@@ -7,7 +7,7 @@ import EditModal from "./edit-modal/EditModal";
 
 const BookingInfo = ({ bookings }) => {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto lg:w-[50%]">
       <div className="flex flex-col gap-5 md:flex-row justify-between items-center">
         <div>
           <h2 className="text-2xl font-bold">My Booking</h2>
@@ -34,10 +34,10 @@ const BookingInfo = ({ bookings }) => {
       </div>
       <div className="space-y-10">
         {bookings.map((booking) => (
-          <div className="border-2 shadow-2xl p-10 rounded-lg border-[#0a9396]" key={booking._id}>
-            <div>
-              <div>
-                <h2>Doctor: {booking.docName}</h2>
+          <div className="border-l-8 shadow-2xl p-3 rounded-lg border-l-black" key={booking._id}>
+            <div className="flex flex-col md:flex-row md:items-center gap-5">
+              <div className="border-t-2 border-l-5 border-[#0a9396] rounded-lg p-3 w-full">
+                <h2 className="text-xl text-bold text-center mb-5 border-b-2">Doctor: {booking.docName}</h2>
                 <h2>Patient: {booking.name}</h2>
                 <p>Gender: {booking.gender}</p>
                 <p>Date: {booking.departureDate}</p>
@@ -45,17 +45,18 @@ const BookingInfo = ({ bookings }) => {
                 <span>Reason: {booking.reason}</span>
               </div>
 
-              <div className="mt-10">
-                <h1>Patient's Contact Method</h1>
+              <div className="border-r-5 border-b-2 border-[#0a9396] rounded-lg p-3 w-full">
+                <div>
+                <h1 className="text-xl text-bold text-center mb-5 border-b-2">Patient's Contact Method</h1>
                 <p>Email: {booking.email}</p>
                 <p>Number: {booking.number}</p>
-                <p></p>
               </div>
-            </div>
 
-            <div className="mt-5 gap-10 flex ">
+              <div className="mt-2 justify-center gap-5 flex border-l-2 border-r-2 border-[#0a9396] rounded-lg p-3 bg-[#0a9396]/10">
               <EditModal booking={booking}></EditModal>
               <DeleteAlert booking={booking}></DeleteAlert>
+            </div>
+              </div>
             </div>
           </div>
         ))}

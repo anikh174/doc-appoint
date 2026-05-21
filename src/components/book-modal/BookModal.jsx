@@ -71,7 +71,7 @@ const BookModal = ({ specificDoctorDetails }) => {
                           <Label>Doctor Name</Label>
                           <Input
                             value={specificDoctorDetails.name}
-                            className="rounded-2xl"
+                            className="rounded-lg"
                           />
                           <FieldError />
                         </TextField>
@@ -81,7 +81,7 @@ const BookModal = ({ specificDoctorDetails }) => {
                           <Label>Name</Label>
                           <Input
                             placeholder="Your Name"
-                            className="rounded-2xl"
+                            className="rounded-lg"
                           />
                           <FieldError />
                         </TextField>
@@ -92,7 +92,7 @@ const BookModal = ({ specificDoctorDetails }) => {
                           <Label>Email</Label>
                           <Input
                             placeholder="Your Email"
-                            className="rounded-2xl"
+                            className="rounded-lg"
                           />
                           <FieldError />
                         </TextField>
@@ -103,7 +103,7 @@ const BookModal = ({ specificDoctorDetails }) => {
                           <Label>Phone Number</Label>
                           <Input
                             placeholder="Your Number"
-                            className="rounded-2xl"
+                            className="rounded-lg"
                           />
                           <FieldError />
                         </TextField>
@@ -119,7 +119,7 @@ const BookModal = ({ specificDoctorDetails }) => {
                             placeholder="Select"
                           >
                             <Label>Gender</Label>
-                            <Select.Trigger className="rounded-2xl">
+                            <Select.Trigger className="rounded-lg">
                               <Select.Value />
                               <Select.Indicator />
                             </Select.Trigger>
@@ -150,7 +150,7 @@ const BookModal = ({ specificDoctorDetails }) => {
                             isRequired
                           >
                             <Label>Departure Date</Label>
-                            <Input type="date" className="rounded-2xl" />
+                            <Input type="date" className="rounded-lg" />
                             <FieldError />
                           </TextField>
                         </div>
@@ -162,7 +162,7 @@ const BookModal = ({ specificDoctorDetails }) => {
                           <Label>Reason</Label>
                           <TextArea
                             placeholder="Describe your reason"
-                            className="rounded-3xl"
+                            className="rounded-lg"
                           />
                           <FieldError />
                         </TextField>

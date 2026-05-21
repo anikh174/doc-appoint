@@ -39,7 +39,7 @@ const EditModal = ({booking}) => {
   return (
     <div>
       <Modal>
-        <Button variant="outline" className={'border border-[#0a9396] text-[#0a9396] rounded-lg'}><BiEdit></BiEdit>Edit</Button>
+        <Button variant="outline" className={'border-2 border-[#0a9396] text-[#0a9396] rounded-lg'}><BiEdit></BiEdit>Edit</Button>
         <Modal.Backdrop>
           <Modal.Container placement="auto">
             <Modal.Dialog className="sm:max-w-md">
@@ -65,7 +65,7 @@ const EditModal = ({booking}) => {
                           <Label>Doctor Name</Label>
                           <Input
                           disabled
-                            className="rounded-2xl"
+                            className="rounded-lg"
                           />
                           <FieldError />
                         </TextField>
@@ -75,7 +75,7 @@ const EditModal = ({booking}) => {
                           <Label>Name</Label>
                           <Input
                             placeholder="Your Name"
-                            className="rounded-2xl"
+                            className="rounded-lg"
                           />
                           <FieldError />
                         </TextField>
@@ -86,7 +86,7 @@ const EditModal = ({booking}) => {
                           <Label>Email</Label>
                           <Input
                             placeholder="Your Email"
-                            className="rounded-2xl"
+                            className="rounded-lg"
                           />
                           <FieldError />
                         </TextField>
@@ -97,7 +97,7 @@ const EditModal = ({booking}) => {
                           <Label>Phone Number</Label>
                           <Input
                             placeholder="Your Number"
-                            className="rounded-2xl"
+                            className="rounded-lg"
                           />
                           <FieldError />
                         </TextField>
@@ -113,7 +113,7 @@ const EditModal = ({booking}) => {
                             placeholder="Select"
                           >
                             <Label>Gender</Label>
-                            <Select.Trigger className="rounded-2xl">
+                            <Select.Trigger className="rounded-lg">
                               <Select.Value />
                               <Select.Indicator />
                             </Select.Trigger>
@@ -145,7 +145,7 @@ const EditModal = ({booking}) => {
                             isRequired
                           >
                             <Label>Departure Date</Label>
-                            <Input type="date" className="rounded-2xl" />
+                            <Input type="date" className="rounded-lg" />
                             <FieldError />
                           </TextField>
                         </div>
@@ -157,7 +157,7 @@ const EditModal = ({booking}) => {
                           <Label>Reason</Label>
                           <TextArea
                             placeholder="Describe your reason"
-                            className="rounded-3xl"
+                            className="rounded-lg"
                           />
                           <FieldError />
                         </TextField>

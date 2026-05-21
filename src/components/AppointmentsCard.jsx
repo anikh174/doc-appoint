@@ -18,13 +18,23 @@ const AppointmentsCard = ({ doctor }) => {
   } = doctor;
   return (
     <div>
-      <div className=" bg-base-100 shadow-sm">
+      <div
+        className=" backdrop-blur-xl
+bg-white/10
+border border-white/20
+rounded-lg
+transition-all duration-500
+hover:-translate-y-3
+hover:bg-white/20
+hover:shadow-[0_20px_60px_rgba(0,0,0,0.25)]
+overflow-hidden"
+      >
         <Image
           src={image}
           alt="name"
           width={300}
           height={300}
-          className="h-[300px] w-full"
+          className="h-[300px] w-full transition-transform duration-500 hover:scale-110"
         ></Image>
 
         <div className="card-body">
@@ -37,13 +47,27 @@ const AppointmentsCard = ({ doctor }) => {
 
           <div>
             <p>{hospital}</p>
-            <p>{location} | <span>{experience}</span></p>
-            <p className="flex justify-between items-center"><span>{rating}</span> <span>{totalReviews} reviews</span></p>
-            <p>$ {fee}/<span>visit</span></p>
+            <p>
+              {location} | <span>{experience}</span>
+            </p>
+            <p className="flex justify-between items-center">
+              <span>{rating}</span> <span>{totalReviews} reviews</span>
+            </p>
+            <p>
+              $ {fee}/<span>visit</span>
+            </p>
           </div>
         </div>
         <div className="p-2">
-          <Link href={`all-appointment/${_id}`}><Button className={'w-full rounded-none bg-[#0a9396]/80 text-xl font-bold'}>View Details</Button></Link>
+          <Link href={`all-appointment/${_id}`}>
+            <Button
+              className={
+                "w-full rounded-none bg-[#0a9396]/80 text-xl font-bold"
+              }
+            >
+              View Details
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

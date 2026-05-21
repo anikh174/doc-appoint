@@ -23,7 +23,7 @@ export function DeleteAlert({booking}) {
   }
   return (
     <AlertDialog>
-      <Button variant="outline" className={'rounded-lg border border-red-500 text-red-500'}><TrashBin></TrashBin> Delete</Button>
+      <Button variant="outline" className={'rounded-lg border-2 border-red-500 text-red-500'}><TrashBin></TrashBin> Delete</Button>
       <AlertDialog.Backdrop>
         <AlertDialog.Container>
           <AlertDialog.Dialog className="sm:max-w-[400px]">
