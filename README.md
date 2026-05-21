@@ -1,36 +1,232 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🏥 DocAppoint — Doctor Appointment Booking System
 
-## Getting Started
+**Live Site:** [https://docappoint.vercel.app](https://doc-appoint-vert.vercel.app/)
 
-First, run the development server:
+> Bangladesh's trusted platform for finding and booking doctor appointments online. Connect with 500+ verified specialists, manage bookings, and take control of your healthcare journey — all in one place.
+
+---
+
+## ✨ Key Features
+
+- 🔐 **Secure Authentication** — Email/password login & Google OAuth via Better Auth (JWT-based sessions). Private routes are fully protected and persist on page reload.
+- 📅 **Smart Appointment Booking** — Browse verified doctors by specialty, view full profiles, and book appointments instantly with a clean modal form.
+- 👤 **Personal Dashboard** — Logged-in users can view, update, and delete their own appointments in real time — no page reload required.
+- 🔍 **Search & Filter** — Instantly search doctors by name and filter by medical specialty on the All Appointments page.
+- ⭐ **Doctor Reviews** — Patients can leave star ratings and reviews for doctors after completing an appointment.
+
+---
+
+## 🛠️ Tech Stack
+
+### Client
+| Technology | Purpose |
+|---|---|
+| React 18 | UI framework |
+| React Router v6 | Client-side routing |
+| Tailwind CSS | Styling |
+| Axios | HTTP requests |
+| React Hot Toast | Notifications |
+| Swiper.js | Hero banner slider |
+| React Helmet | SEO metadata per page |
+
+### Server
+| Technology | Purpose |
+|---|---|
+| Node.js | Runtime |
+| Express.js | REST API framework |
+| MongoDB | Database |
+| Mongoose | ODM |
+| Better Auth | Authentication (JWT/session) |
+| CORS | Cross-origin configuration |
+| dotenv | Environment variables |
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js v18+
+- MongoDB Atlas account (or local MongoDB)
+- Google OAuth credentials (for social login)
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/anikh174/doc-appoint.git
+cd docappoint
+```
+
+### 2. Setup the Server
+
+```bash
+cd server
+npm install
+```
+
+Create a `.env` file in the `server/` directory:
+
+```env
+PORT=5000
+MONGODB_URI=secret
+JWT_SECRET=secret
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+CLIENT_URL=http://localhost:3000
+```
+
+Seed the database:
+
+```bash
+node seed.js
+```
+
+Start the server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Setup the Client
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+cd ../client
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env` file in the `client/` directory:
 
-## Learn More
+```env
+VITE_API_URL=http://localhost:5000
+VITE_GOOGLE_CLIENT_ID=your_google_client_id
+```
 
-To learn more about Next.js, take a look at the following resources:
+Start the client:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔑 Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Variable | Location | Description |
+|---|---|---|
+| `MONGODB_URI` | server | MongoDB connection string |
+| `JWT_SECRET` | server | Secret key for signing JWTs |
+| `GOOGLE_CLIENT_ID` | server + client | Google OAuth client ID |
+| `GOOGLE_CLIENT_SECRET` | server | Google OAuth client secret |
+| `CLIENT_URL` | server | Frontend URL for CORS |
+| `VITE_API_URL` | client | Backend API base URL |
+
+---
+
+## 📡 API Endpoints
+
+### Doctors
+| Method | Endpoint | Description | Auth |
+|---|---|---|---|
+| GET | `/api/doctors` | Get all doctors | Public |
+| GET | `/api/doctors/:id` | Get doctor by ID | Public |
+| GET | `/api/doctors/top-rated` | Get top 3 rated doctors | Public |
+
+### Appointments
+| Method | Endpoint | Description | Auth |
+|---|---|---|---|
+| GET | `/api/appointments` | Get all appointments | Public |
+| GET | `/api/appointments/my` | Get logged-in user's bookings | 🔒 Private |
+| POST | `/api/appointments` | Book a new appointment | 🔒 Private |
+| PUT | `/api/appointments/:id` | Update an appointment | 🔒 Private |
+| DELETE | `/api/appointments/:id` | Delete an appointment | 🔒 Private |
+
+### Auth
+| Method | Endpoint | Description |
+|---|---|---|
+| POST | `/api/auth/register` | Register new user |
+| POST | `/api/auth/login` | Login with email/password |
+| POST | `/api/auth/google` | Google OAuth login |
+| GET | `/api/auth/me` | Get current user |
+
+### Reviews
+| Method | Endpoint | Description | Auth |
+|---|---|---|---|
+| GET | `/api/reviews/:doctorId` | Get reviews for a doctor | Public |
+| POST | `/api/reviews` | Post a review | 🔒 Private |
+
+---
+
+## 🔒 Authentication Flow
+
+```
+User submits login form
+        ↓
+Server validates credentials
+        ↓
+JWT token issued & stored in localStorage
+        ↓
+Token sent in Authorization header on every request
+        ↓
+Server middleware verifies token on protected routes
+        ↓
+Logged-in user persists on page reload via token check
+```
+
+Password validation rules enforced on registration:
+- Minimum **6 characters**
+- At least **1 uppercase** letter
+- At least **1 lowercase** letter
+
+---
+
+## 🌐 Deployment
+
+### Client → Vercel
+
+1. Push `client/` to GitHub
+2. Import project in [vercel.com](https://doc-appoint-vert.vercel.app/)
+3. Set environment variables in Vercel dashboard
+4. Deploy — Vercel handles SPA routing automatically
+
+### Server → Render
+
+1. Push `server/` to GitHub
+2. Create a new **Web Service** on [render.com](https://doc-appoint-server-self.vercel.app/)
+3. Set environment variables in Render dashboard
+4. Build command: `npm install`
+5. Start command: `node index.js`
+
+> **Note:** Add all routes to the Vercel `vercel.json` to prevent 404 on reload:
+> ```json
+> { "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
+> ```
+
+---
+
+## 🧩 Pages Overview
+
+| Page | Route | Access |
+|---|---|---|
+| Home | `/` | Public |
+| All Appointments | `/appointments` | Public |
+| Doctor Details | `/appointments/:id` | 🔒 Login required |
+| Login | `/login` | Public |
+| Register | `/register` | Public |
+| Dashboard | `/dashboard` | 🔒 Private |
+| My Bookings | `/dashboard/bookings` | 🔒 Private |
+| My Profile | `/dashboard/profile` | 🔒 Private |
+| 404 Not Found | `*` | Public |
+
+---
+
+## 👨‍💻 Author
+
+**Your Name**
+- GitHub: [@yourusername](https://github.com/anikh174)
+- Email: hossainanik174@.com
+
+---
+
+<p align="center">Made with ❤️ for better healthcare access in Bangladesh</p>

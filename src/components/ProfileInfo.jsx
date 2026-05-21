@@ -2,6 +2,7 @@
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import { BiEdit } from "react-icons/bi";
+import UpdateProfile from "./updateProfile/Updateprofile";
 
 const ProfileInfo = () => {
   const { data: session } = authClient.useSession();
@@ -48,6 +49,11 @@ const ProfileInfo = () => {
               <span className="font-semibold text-[#0a9396]">{user?.name}</span> 👋 <br />
               Thank you for being a part of DocAppoint.
             </p>
+
+          {/* change this line */}
+            <div className="flex justify-center mt-5">
+          <UpdateProfile></UpdateProfile>
+        </div>
           </div>
         </figure>
       </div>
